@@ -1,0 +1,39 @@
+.header_container{
+    display: flex;
+    background-color: #1f1f1f;
+    height: 6.25vh;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 2;
+
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0 9.5vw;
+    align-items: center;
+    height: 6.25vh;
+    width: 100%;
+  }
+  
+  .header_contactme {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1f1f1f;
+    width: 12.23vw;
+  }
+  
+  .header_text {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1vw;
+    line-height: 17px;
+    color: #ffffff;
+    margin: 0;
+  }
