@@ -1,11 +1,11 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, Suspense, lazy } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/form.css";
 import ipaddress from "../components/url";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import BreadCrumb from "../components/breadcrumb";
+const BreadCrumb = lazy(()=>import("../components/breadcrumb"));
 
 const Form = (props) => {
   const initialValues = {
@@ -125,7 +125,9 @@ const Form = (props) => {
   return (
     <>
       <div className="breadcrumb">
+      <Suspense fallback={<h6> </h6>}>
         <BreadCrumb />
+        </Suspense>
       </div>
       <div className="form-container">
         <form className="form-subcontainer" onSubmit={handleSubmit}>

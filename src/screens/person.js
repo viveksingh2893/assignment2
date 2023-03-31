@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy,  Suspense } from "react";
 import ipaddress from "../components/url";
 import Card from "../components/card";
 import "../assets/css/person.css";
-import BreadCrumb from "../components/breadcrumb";
+const BreadCrumb = lazy(()=>import("../components/breadcrumb"));
 
 const Person = (props) => {
   const [data, setData] = useState();
@@ -24,7 +24,9 @@ const Person = (props) => {
   return (
     <>
       <div className="breadcrumb">
+        <Suspense fallback={<h6> </h6>}>
         <BreadCrumb />
+        </Suspense>
       </div>
       <div className="person-container">
         {data?.map((value, i) => {
