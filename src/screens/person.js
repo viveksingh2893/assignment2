@@ -1,9 +1,11 @@
-import axios from "axios";
-import React, { useState, useEffect, lazy,  Suspense } from "react";
-import ipaddress from "../components/url";
-import Card from "../components/card";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import "../assets/css/person.css";
-const BreadCrumb = lazy(()=>import("../components/breadcrumb"));
+import axios from "axios";
+import ipaddress from "../components/url";
+// import Card from "../components/card";
+const Card = lazy(() => import("../components/card"));
+
+const BreadCrumb = lazy(() => import("../components/breadcrumb"));
 
 const Person = (props) => {
   const [data, setData] = useState();
@@ -25,14 +27,16 @@ const Person = (props) => {
     <>
       <div className="breadcrumb">
         <Suspense fallback={<h6> </h6>}>
-        <BreadCrumb />
+          <BreadCrumb />
         </Suspense>
       </div>
       <div className="person-container">
         {data?.map((value, i) => {
           return (
             <div className="person-card" key={i}>
-              <Card value={value} id={i} setSelect={props.setSelect} />
+              <Suspense fallback={<h6> </h6>}>
+                <Card value={value} id={i} setSelect={props.setSelect} />
+              </Suspense>
             </div>
           );
         })}
