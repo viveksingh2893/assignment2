@@ -1,13 +1,13 @@
 .breadcrumb{
   display: flex;
-  width:100vw;
+  width:90%;
   align-items: flex-start;
   justify-content: flex-start;
   margin:.5vw 2vw;
 }
 
 .form-container {
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;

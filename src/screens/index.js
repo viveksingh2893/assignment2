@@ -8,7 +8,7 @@ const Screens = () => {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        height: "100%",
         maxWidth: "100vw",
         backgroundColor: "white",
       }}
