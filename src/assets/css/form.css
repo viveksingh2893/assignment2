@@ -1,39 +1,122 @@
-.header_container{
-    display: flex;
-    background-color: #1f1f1f;
-    height: 6.25vh;
-    width: 100%;
-    position: fixed;
-    top:0;
-    z-index: 2;
+.breadcrumb{
+  display: flex;
+  width:100vw;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin:.5vw 2vw;
+}
 
-  }
-  
-  .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin:0 9.5vw;
-    align-items: center;
-    height: 6.25vh;
-    width: 100%;
-  }
-  
-  .header_contactme {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #1f1f1f;
-    width: 12.23vw;
-  }
-  
-  .header_text {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 1vw;
-    line-height: 17px;
-    color: #ffffff;
-    margin: 0;
-  }
+.form-container {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.form-subcontainer {
+  width: 30vw;
+  height:auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  box-shadow: 0px 0px 1px 1px #206a5d;
+  border-radius: 2px;
+  background-color: #ffffff;
+  padding: 4vh;
+}
+.form_header {
+  width: 100%;
+  height: 3.5vh;
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.65vw;
+  line-height: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 0;
+  color: #206a5d;
+}
+.form-input-container {
+  flex-direction: column;
+  width: 100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input_field {
+  width: 80%;
+  height: 5vh;
+  border: 3px solid #206a5d;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 1.5vw;
+  outline: none;
+  color: #756b6b;
+  background: #ffffff;
+  margin-bottom: 1.5vw;
+  border-radius: 5px;
+  padding-left: 0.65vw;
+}
+
+.label_field {
+  width: 80%;
+  font-family: "Noto Sans";
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 1.5vw;
+  outline: none;
+  color: #756b6b;
+  background: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+::-webkit-file-upload-button{
+color: white;
+background: #206a5d;
+padding:1vw;
+border:none;
+border-radius: 3vw;
+box-shadow: 1px 0 1px 1px #6b4559;
+outline: none;
+}
+
+::-webkit-file-upload-button:hover{
+  background: #438a5e;
+  cursor: pointer;
+}
+
+.upload-box{
+  font-size: 1vw;
+  background: white;
+  border-radius: 3vw;
+  box-shadow: 5px 5px 10px black;
+  width:80%;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.form-submit-btn {
+  width: 12vw;
+  height: 5vh;
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #206a5d;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 5px;
+  font-family: "Noto Sans";
+  font-weight: 600;
+  font-size: 0.9vw;
+  color: #ffffff;
+}
