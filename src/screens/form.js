@@ -132,7 +132,7 @@ const Form = (props) => {
       <div className="form-container">
         <form className="form-subcontainer" onSubmit={handleSubmit}>
           <div className="form_header">
-            <p style={{ margin: "0" }}>Form</p>
+            <p style={{ margin: "0" }}>{props.select? "Edit Form":"Form"}</p>
           </div>
           <div className="form-input-container">
             <label className="label_field ">Name :</label>
