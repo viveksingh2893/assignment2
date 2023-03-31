@@ -2,7 +2,6 @@ import React, { useState, useEffect, lazy, Suspense } from "react";
 import "../assets/css/person.css";
 import axios from "axios";
 import ipaddress from "../components/url";
-// import Card from "../components/card";
 const Card = lazy(() => import("../components/card"));
 
 const BreadCrumb = lazy(() => import("../components/breadcrumb"));
@@ -20,8 +19,6 @@ const Person = (props) => {
   useEffect(() => {
     Data();
   }, []);
-
-  console.log(data);
 
   return (
     <>

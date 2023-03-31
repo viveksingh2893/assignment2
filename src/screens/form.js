@@ -93,7 +93,7 @@ const Form = (props) => {
   };
 
   useEffect(() => {
-    props.select ? getData() : console.log("no id");
+    props.select ? getData() :null;
   }, [props.select]);
 
   const handleChange = (e) => {
