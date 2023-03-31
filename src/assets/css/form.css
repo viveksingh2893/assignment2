@@ -53,8 +53,9 @@
   height: 5vh;
   border: 3px solid #206a5d;
   font-family: "Noto Sans";
+  padding:0 1vw 0 0;
   font-weight: 400;
-  font-size: 1vw;
+  font-size: 1.2vw;
   line-height: 1.5vw;
   outline: none;
   color: #756b6b;
