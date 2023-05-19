@@ -5,6 +5,9 @@ import ipaddress from "../components/url";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import jwt_decode from "jwt-decode";
+import { LoginSocialFacebook, LoginSocialGoogle } from "reactjs-social-login";
+import { FacebookLoginButton, GoogleLoginButton } from "react-social-login-buttons";
 const BreadCrumb = lazy(()=>import("../components/breadcrumb"));
 
 const Form = (props) => {
@@ -122,6 +125,27 @@ const Form = (props) => {
     }
   }, [submit]);
 
+  const handleCallbackResponse=(response)=>{
+    console.log("jwt", jwt_decode(response.credential))
+    document.getElementById("signInDiv").hidden=true
+  }
+
+  useEffect(()=>{
+    /* global google */
+    google.accounts.id.initialize({
+      client_id: "278685666130-t894kmtrf8nmu3ucccb933qafq7d3vd6.apps.googleusercontent.com",
+      callback: handleCallbackResponse
+    })
+
+    google.accounts.id.renderButton(
+      document.getElementById("signInDiv"),{
+        theme:"outline", size:"large"
+      }
+    )
+
+    google.accounts.id.prompt()
+  },[])
+
   return (
     <>
       <div className="breadcrumb">
@@ -181,6 +205,21 @@ const Form = (props) => {
               value={formValues.avatar}
               onChange={handleChange}
             />
+            <div id="signInDiv"></div>
+            <LoginSocialGoogle
+               client_id= "278685666130-t894kmtrf8nmu3ucccb933qafq7d3vd6.apps.googleusercontent.com"
+               onResolve={(res)=>console.log("google",res)}
+               onReject={(err)=>console.log(err)}
+            >
+              <GoogleLoginButton/>
+            </LoginSocialGoogle>
+            <LoginSocialFacebook
+            appId="781799943463727"
+            onResolve={(res)=>console.log("fb",res)}
+            onReject={(err)=>console.log(err)}
+            >
+              <FacebookLoginButton/>
+            </LoginSocialFacebook>
             {/* <label className="label_field ">Upload photo:</label>
           <input
             type="file"

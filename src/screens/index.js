@@ -4,7 +4,7 @@ const Form = lazy(() => import("./form"));
 const Person = lazy(() => import("./person"));
 
 const Screens = () => {
-  const [select, setSelect] = useState();
+  const [select, setSelect] = useState(null);
   return (
     <div
       style={{
